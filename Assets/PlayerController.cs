@@ -19,7 +19,7 @@ namespace ClearSky
             anim = GetComponent<Animator>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             Run();
         }
@@ -63,8 +63,11 @@ namespace ClearSky
                 transform.localScale = new Vector3(1, 1, direction);
                     anim.SetBool("isRun", true);
             }
-            transform.position += moveVelocity * movePower * Time.deltaTime;
+            //transform.position += moveVelocity * movePower * Time.deltaTime;
+            rb.position += moveVelocity * movePower * Time.deltaTime;
         }
+
+
 
 
     }
